@@ -213,3 +213,20 @@ AC_CONFIG_FILES([Makefile
 
 # Generate the "configure" script
 AC_OUTPUT
+
+# 添加 Google Test 支持
+PKG_CHECK_MODULES([GTEST], [gtest_main])
+
+# 添加对 C++ 的支持
+AC_PROG_CXX
+
+# 检查 pkg-config
+PKG_CHECK_MODULES([GTEST], [gtest], [], [
+    AC_MSG_ERROR([
+        Google Test not found. Please install Google Test:
+        On Ubuntu/Debian: sudo apt-get install libgtest-dev
+        On macOS: brew install googletest
+    ])
+])
+
+AC_OUTPUT
