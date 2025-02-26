@@ -4,6 +4,8 @@ m4_define([NC_MINOR], 5)
 m4_define([NC_PATCH], 0)
 m4_define([NC_BUGS], [https://github.com/twitter/twemproxy/issues])
 
+m4_pattern_allow([AC_MSG_ERROR])
+
 # Initialize autoconf
 AC_PREREQ([2.64])
 AC_INIT([nutcracker], [NC_MAJOR.NC_MINOR.NC_PATCH], [NC_BUGS])
